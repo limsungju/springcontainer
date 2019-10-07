@@ -2,6 +2,8 @@ package kr.co.itcen.springcontainer.test;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 import kr.co.itcen.springcontainer.user.User;
@@ -9,8 +11,15 @@ import kr.co.itcen.springcontainer.user.User;
 public class ContainerTest {
 
 	public static void main(String[] args) {
-		testBeanFactory();
+		// testBeanFactory();
+		testApplicationContext();
 		
+	}
+	
+	public static void testApplicationContext() {
+		ApplicationContext appCtxt = new ClassPathXmlApplicationContext("config/user/applicationContext01.xml");
+		User user = appCtxt.getBean(User.class);
+		System.out.println(user);
 	}
 	
 	public static void testBeanFactory() {
