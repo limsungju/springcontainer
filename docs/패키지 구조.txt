@@ -1,0 +1,66 @@
+src/main/java
+     |
+     |-kr.co.itcen.springcontainer.user
+     |-kr.co.itcen.springcontainer.soundsystem
+     |  |
+     |  |---CompactDisc.java
+     |  |---고등래퍼2.java
+     |
+     |-kr.co.itcen.springcontainer.videosystem
+     |-kr.co.itcen.springcontainer.test
+     |  |
+     |  |-ContainerTest.java
+     |-config.user
+     |    |-UserConfig.java
+     |-config.soundsystem
+     |-config.videosystem
+
+src/main/resources
+     |-config.user
+     |    |-applicationContext01.xml(auto-scanning)
+     |    |-applicationContext02.xml(Bean Configuraion (주))
+
+src/test/java
+src/test/resources
+
+package + java 파일    -> 소스      ~~~~>Class
+package + xml      -> 리소스   ~~~>그대로
+     .properties
+
+
+   src
+    |-main
+    |   |-java
+    |       |-kr
+    |         |-co
+    |           |-itcen
+    |               |-container
+    |                     |-user
+    |                         |-User.java
+    |
+    |-resources
+      |-config
+         |-user
+   |-applicationContext.xml
+   
+   
+            |<maven build>
+            ↓
+            
+    src
+    |-main
+    |   |-java
+    |       |-kr
+    |         |-co
+    |           |-itcen
+    |               |-container
+    |                     |-user
+    |                        |-user.class
+    |-config
+      |-user
+        |-applicationContext.xml
+            
+            
+            
+            
+            
