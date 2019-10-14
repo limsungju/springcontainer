@@ -11,6 +11,7 @@ public class User {
 		no = 1L;
 		name = "임성주";
 	}
+	
 	public User(Long no, String name) {
 		this.no = no;
 		this.name = name;

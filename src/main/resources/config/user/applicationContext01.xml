@@ -20,6 +20,12 @@
         http://www.springframework.org/schema/task 
         http://www.springframework.org/schema/task/spring-task.xsd">
 	
-	<bean class="kr.co.itcen.springcontainer.user.User" />
+	<bean id="user1" name="usr1" class="kr.co.itcen.springcontainer.user.User" />
+	<bean id="user2" name="usr2" class="kr.co.itcen.springcontainer.user.User" />
+	
+	<bean id="user3" class="kr.co.itcen.springcontainer.user.User">
+		<constructor-arg index="0" value="3" />
+		<constructor-arg index="1" value="또치" />
+	</bean>
 	
 </beans>
