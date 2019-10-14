@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import config.user.UserConfig01;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= {UserConfig01.class})
+@ContextConfiguration(classes = {UserConfig01.class})
 public class UserTest {
 	
 	@Autowired

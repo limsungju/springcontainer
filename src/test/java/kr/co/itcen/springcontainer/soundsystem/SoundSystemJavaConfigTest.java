@@ -3,49 +3,52 @@ package kr.co.itcen.springcontainer.soundsystem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.co.itcen.springcontainer.config.soundsystem.SoundSystemConfig;
+
 /**
- * Auto Configuration - xml Config(Annotation Scan)
+ * Auto Configuration - Java Config 
  * Component Scanning( @Component, @Named, @Autowired, @Inject )
  *                     @Controller
  *                     @Service
  *                     @Repository
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:config/soundSystem/soundSystemConfig.xml"})
-public class SoundSystemXmlConfigTest {
+@ContextConfiguration(classes = {SoundSystemConfig.class})
+public class SoundSystemJavaConfigTest {
 	
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 	
 	@Autowired
-	private CompactDisc cd;
+	@Qualifier("highSchoolRapper3Final")
+	private CompactDisc compactDisc;
 	
 	@Autowired
 	private CDPlayer cdPlayer;
 	
 	@Test
 	public void testCDNull() {
-		assertNotNull(cd);
+		assertNotNull(compactDisc);
 	}
 	
 	@Test
-	public void testCDPlayer() {
+	public void testCDPlayerNull() {
 		assertNotNull(cdPlayer);
 	}
 	
-	//@Ignore // @Test가 달려있어도 Test를 하지 않게한다.
 	@Test
 	public void testPlay() {
 		cdPlayer.play();
-		assertEquals("Playing 붕붕 by 김하온", systemOutRule.getLog().replace("\r\n", "").replace("\n", "")); // windows용, linux용 둘다 처리
+		assertEquals("Playing 지구멸망 by 양승호", systemOutRule.getLog().replace("\r\n", "").replace("\n", "")); // windows용, linux용 둘다 처리
 	}
+	
 }
