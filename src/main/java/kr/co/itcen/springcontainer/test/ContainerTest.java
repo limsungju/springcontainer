@@ -41,16 +41,26 @@ public class ContainerTest {
 		User user3 = (User)appCtxt.getBean("user3");
 		System.out.println(user3);
 		
+		// User() 으로 생성되고 프로퍼티 세팅을 한 빈 가져오기
+		// 프로퍼티 세팅을 하기 위해서는 setter가 필요하다.
+		User user4 = (User)appCtxt.getBean("user4");
+		System.out.println(user4);
+		
+		// DI 설정한 빈 가져오기
+		User user5 = (User)appCtxt.getBean("user5");
+		System.out.println(user5);
+		
+		// DI2 설정한 빈 가져오기
+		User user6 = (User)appCtxt.getBean("user6");
+		System.out.println(user6);
+		
+		
 		((ConfigurableApplicationContext) appCtxt).close();
 	}
 
 	// 현장에서 안씀
 	public static void testBeanFactory() {
-		BeanFactory bf1 = new XmlBeanFactory(new ClassPathResource("config/user/applicationContext01.xml")); // ClassPathResource
-																												// :
-																												// resource
-																												// 경로로
-																												// 맞춰준다.
+		BeanFactory bf1 = new XmlBeanFactory(new ClassPathResource("config/user/applicationContext01.xml")); // ClassPathResource: resource 경로로 맞춰준다.
 		User user = bf1.getBean(User.class);
 		System.out.println(user);
 
