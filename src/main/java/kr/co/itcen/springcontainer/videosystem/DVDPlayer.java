@@ -3,6 +3,10 @@ package kr.co.itcen.springcontainer.videosystem;
 public class DVDPlayer {
 	private DigitalVideoDisc digitalVideoDisc;
 	
+	// 기본 생성자
+	public DVDPlayer() {
+	}
+	
 	// 생성자
 	public DVDPlayer(DigitalVideoDisc digitalVideoDisc) {
 		this.digitalVideoDisc = digitalVideoDisc;
