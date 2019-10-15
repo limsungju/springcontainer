@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.itcen.springcontainer.config.soundsystem.SoundSystemConfig;
+import config.soundsystem.SoundSystemConfig;
 
 /**
  * Auto Configuration - Java Config 
- * Component Scanning( @Component, @Named, @Autowired, @Inject )
+ * Scanning Component( @Component, @Named, @Autowired, @Inject )
  *                     @Controller
  *                     @Service
  *                     @Repository

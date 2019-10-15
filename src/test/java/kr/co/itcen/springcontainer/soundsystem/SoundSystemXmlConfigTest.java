@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -27,6 +28,7 @@ public class SoundSystemXmlConfigTest {
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 	
 	@Autowired
+	@Qualifier("highSchoolRapper3Final")
 	private CompactDisc cd;
 	
 	@Autowired
@@ -46,6 +48,7 @@ public class SoundSystemXmlConfigTest {
 	@Test
 	public void testPlay() {
 		cdPlayer.play();
-		assertEquals("Playing 붕붕 by 김하온", systemOutRule.getLog().replace("\r\n", "").replace("\n", "")); // windows용, linux용 둘다 처리
+		assertEquals("Playing 지구멸망 by 양승호", systemOutRule.getLog().replace("\r\n", "").replace("\n", "")); // windows용, linux용 둘다 처리
+		//assertEquals("Playing 붕붕 by 김하온", systemOutRule.getLog().replace("\r\n", "").replace("\n", "")); // windows용, linux용 둘다 처리
 	}
 }
