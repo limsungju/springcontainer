@@ -1,5 +1,6 @@
 package kr.co.itcen.springcontainer.videosystem;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Rule;
@@ -26,9 +27,25 @@ public class VideoSystemJavaConfigTest {
 	@Autowired
 	private DVDPlayer player;
 	
+//	@Autowired
+//	private DigitalVideoDisc dvd;
+	
+//	@Test
+//	public void testDVDNull() {
+//		assertNotNull(dvd);
+//	}
+	
 	@Test
 	public void testPlayerNull() {
 		assertNotNull(player);
+	}
+	
+	@Test
+	public void testPlay() {
+		player.play();
+		
+		// assertEquals("Playing Movie MARVLE's Avengers", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+		assertEquals("Playing Movie MARVLE's Avengers Infinity War", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
 	}
 	
 }
